@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Homepage
+        </title>
+    </head>
+    
+    <body>
+        <h1>Welcome, {{ username }}</h1>
+        {% for message in chat_messages %}
+        <p>({{ message["timestamp"] }}) {{ message["from"].title() }} - {{ message["message"] }}</p>
+        {% endfor %}
+        <script>
+            setTimeout(function() {
+                location.reload();
+            }, 5000); //reloads the page every 5000 milliseconds or 5 secs
+        </script>
+    </body>
+    
+</html>
